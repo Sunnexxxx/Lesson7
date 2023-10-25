@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Main{% endblock %}
+
+{% block content %}
+    <div>
+        {% for book in books %}
+            <p>
+                {{book.title}}
+                <a href="{{book.get_absolute_url}}">Details</a>
+            </p>
+        {% endfor %}
+    </div>
+{% endblock %}

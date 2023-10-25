@@ -19,9 +19,12 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from app import views
+from app.views import book_list_view
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.main_page)
+    path('', views.book_list_view),
+    # path('book_list/<int:book_slug>/', views.book_details_view),
+    path('book_list/<slug:book_slug>/', views.book_details_view)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
